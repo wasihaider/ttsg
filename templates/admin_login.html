@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+		<link rel="icon" type="image/png" href="{{ url_for('static', filename = 'images/logo.png') }}"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='MyCSS/admin_login.css') }}">
+		<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='MyJS/admin_login.js') }}"></script>
+    <title>TTSG - Admin Login</title>
+  </head>
+  <body>
+	<section class="container-fluid">
+		<section class="row">
+			<section class="col-md-4 offset-md-4 col-sm-4 offset-sm-4">
+				<form class="form-container">
+					<p class="form-label display-4 ">Admin Login</p>
+  					<div class="form-group">
+    					<label for="adminUsername">Username</label>
+    					<input type="text" class="form-control" id="adminUsername" aria-describedby="emailHelp" required>
+<!--    					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  					</div>
+  					<div class="form-group">
+    					<label for="adminPassword">Password</label>
+    					<input type="password" class="form-control" id="adminPassword" required>
+  					</div>
+  					<button type="submit" class="btn btn-block", id="adminLogin">Login</button>
+				</form>
+			</section>
+		</section>
+	</section>
+  </body>
+</html>

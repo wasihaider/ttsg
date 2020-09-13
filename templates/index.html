@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<nav class="navbar navbar-dark navbar-expand-md fixed-top row mx-auto" role="navigation">  
+      <a href="{{ url_for('index') }}" class="navbar-brand mb-0 h1" href="#">Text to Scene Generator</a>
+      <button class="navbar-toggler hidden-md-up pull-xs-rigth" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mx">
+          <li class="nav-item">
+            <a class="nav-link" style ="color: white;" href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('how') }}">How It works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('what') }}">What it does</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header class="header"> 
+      <div class="overlay">
+       <div class="row">
+        <div class="gen-container col-md-6 offset-md-3 col-sm-6 offset-sm-3">
+          <img src="{{ url_for('static', filename='images/logo.png') }}"><br><br>
+          <form>
+              <input required type="text" id="text-input" name="textInput" autofocus="autofocus" onfocus="this.select()" class="form-control form-control-lg"><br>
+              <button class="btn btn-lg" id="generate" type="button">Generate Scene</button>
+          </form>
+        </div>
+       </div>
+      </div>
+    </header>
+
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<nav class="navbar navbar-dark navbar-expand-md fixed-top row mx-auto" role="navigation">  
+      <a href="{{ url_for('index') }}" class="navbar-brand mb-0 h1" href="#">Text to Scene Generator</a>
+      <button class="navbar-toggler hidden-md-up pull-xs-rigth" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mx">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('how') }}">How It works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style ="color: white;" href="{{ url_for('what') }}">What it does</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container how col-md-6 offset-md-2 col-sm-6 offset-sm-2">
+    	<h1 class="howHeading"> You can generate a room scene</h1>
+    	
+    </div>
+
+{% endblock %}

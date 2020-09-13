@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="cover-spin" style="display:none;"></div>
+<nav class="navbar navbar-dark navbar-expand-md fixed-top row mx-auto" role="navigation">
+    <a href="{{ url_for('index') }}" class="navbar-brand mb-0 h1" href="#">Text to Scene Generator</a>
+    <button class="navbar-toggler hidden-md-up pull-xs-rigth" type="button" data-toggle="collapse"
+            data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mx">
+            <li class="nav-item">
+                <a class="nav-link" style="color: white;" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('how') }}">How It works</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('what') }}">What it does</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about') }}">About Us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="row" style="margin-top:2%; margin-left-10%">
+    <div class="suggestion col-md-3 col-sm-3">
+        <div class="dropdown">
+            <button class="btn btn-info btn-lg dropdown-toggle" data-toggle="dropdown"
+                    style="text-align:left; border:1px  solid #0080;background:#008080; color:#fff;
+                           margin-top:10%; margin-left:10%;"
+                    type="button">
+                Select Image Category
+            </button>
+            <ul class="dropdown-menu" id="image-category">
+
+            </ul>
+        </div>
+        <div class="image-container row" id="images">
+            <section>
+                <div class="box">
+                    <h3>To Edit the Image</h3>
+                    <p>
+                        <br>Step 1: Click on the dropdown menu above
+                        <br>Step 2: Click on the object to change
+                        <br>Step 3: Click on the add icon on any object to replace it on scene
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="container col-md-6 offset-md-3 col-sm-6 offset-sm-3">
+        <div class="row">
+            <div class="col-md-10 m-auto generated-scene">
+                <img id="scene-result" width="1280" height="720" src="">
+            </div>
+        </div>
+        <div class="row text-right my-4">
+            <div class="col-md-6 offset-md-4">
+                <a id="download-scene" href="" download="scene.png">
+                    <button class="btn btn-info btn-lg">Download Image</button>
+                </a>
+                <a href="{{ url_for('index') }}">
+                    <button class="btn btn-info btn-lg">Try Another</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

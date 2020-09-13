@@ -1,0 +1,64 @@
+.image-container{
+    width: 80%;
+    height: 700px;
+    margin-top: 1%;
+    margin-left: 10%;
+    overflow-y: scroll;
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('/static/images/black.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+image-container::after {
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-image: url('/static/images/black.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#cover-spin {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999;
+    display:none;
+}
+
+@-webkit-keyframes spin {
+	from {-webkit-transform:rotate(0deg);}
+	to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+
+#cover-spin::after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}
+.suggestion button{
+    border:1px  solid #0080;
+    background:#008080;
+    color:#fff;
+}
+

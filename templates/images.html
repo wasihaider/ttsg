@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="{{ url_for('static', filename = 'images/logo.png') }}" rel="icon" type="image/png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="{{ url_for('static', filename='MyJS/images.js') }}"></script>
+    <link href="{{ url_for('static', filename='MyCSS/images.css') }}" rel="stylesheet" type="text/css">
+<!--    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='MyCSS/ttsgstyle.css') }}">-->
+    <title>Admin Panel</title>
+</head>
+<body style="overflow:hidden;">
+<div id="cover-spin" style="display:none;"></div>
+<!-- Modal -->
+<div class="modal fade" id="uploadModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Upload New Image</h4>
+                <button class="close" data-dismiss="modal" type="button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Form -->
+                <form action='' enctype="multipart/form-data" method='post'>
+                    Select Category: <select id="modal-categories" name="categories">
+                    <option value="Book">Book</option>
+                    <option value="Table">Table</option>
+                    <option value="Pen">Pen</option>
+                    <option value="Chair">Chair</option>
+                    <option value="Sofa">Sofa</option>
+                    <option value="Cake">Cake</option>
+                    <option value="Plate">Plate</option>
+                    <option value="Jug">Jug</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Bottle">Bottle</option>
+                </select><br>
+                    Select Image :  <input class='form-control' id='file' name='file' type='file' accept="image/png"><br>
+                    <input class='btn btn-info' id='btn_upload' type='button' value='Upload'>
+                </form>
+
+                <!-- Preview-->
+                <div id='preview'></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="row" style="margin-left:10%; margin-top:5%;">
+    <div class="col-md-4">
+        <div class="dropdown" >
+            <button class="btn btn-info btn-lg dropdown-toggle" data-toggle="dropdown" style="text-align:left;"
+                    type="button">
+                Select Image Category
+            </button>
+            <ul class="dropdown-menu" id="image-category"></ul>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-info btn-lg btn-block" data-target="#uploadModal" data-toggle="modal" type="button">Add
+            new image
+        </button>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-info btn-lg" type="button" id="logout-button">
+            Logout <i class="fa fa-sign-out-alt"></i>
+        </button>
+    </div>
+    <!-- Modal -->
+</div>
+<div class="image-container row" id="images"></div>
+
+</body>
+</html>
